@@ -1,3 +1,124 @@
 body {
     text-align: center;
 }
+
+.button {
+    background:#028b80;
+    padding: 1em 2em;
+    color:#fff;
+    border: 0;
+    font-weight: bold;
+}
+  
+.button:hover {
+    background:#333;
+}
+
+#modalMessage {
+    display: none;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #f7e05e;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 20%;
+    margin-left: 40%;
+    text-align: center;  
+}
+
+#modalHelp {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 26%;
+    overflow: hidden;
+    background-color: rgba(121, 118, 118, 0.5);
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: bold;    
+}
+
+.modal-help-body {
+    padding: 10px 20px;
+    opacity: 0.7;
+    margin: auto;
+    color:rgb(26, 24, 131);
+}
+
+#endModal {
+    display: none;
+}
+  
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+  
+.modal-content {
+    background-color: none;
+    margin: 10% auto;
+    width: 100%;
+    animation-name: modalopen;
+    animation-duration: 2s;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .modal-header h2, .modal-footer h3{
+    margin:0;
+  }
+  
+  .modal-header {
+    background:#028b80;
+    text-align: center;
+    padding: 15px;
+    color:#fff;
+    opacity: 0.8;
+    width: 50%;
+    margin: auto;
+}
+  
+.modal-body {
+    padding: 10px 20px;
+    opacity: 0.8;
+    width: 50%;
+    margin: auto;
+    color:#fff;
+}
+  
+.modal-footer {
+    background:#028b80;
+    padding: 10px;
+    color:#fff;
+    text-align: center;
+    opacity: 0.8;
+    width: 50%;
+    margin: auto;
+}
+  
+@keyframes modalopen {
+    from {opacity: 0}
+    to {opacity: 1}
+}
