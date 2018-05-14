@@ -65,7 +65,6 @@ function Player (name, x , y) {
         this.lives -= 1;
     };
 
-
 }
 
 Player.prototype.render = function() {
@@ -82,15 +81,12 @@ function checkCollisions() {
        player.x = 2;
        player.y = 5;
 
-
-
     if (player.lives === 0) {
-        
         modalLost.style.display = 'block';
         modalWin.style.display = 'none';
         modalOpen();
-    } 
-} 
+    }
+}
 
 /*
  * modify the modalMessage content and display and hide it
@@ -114,6 +110,9 @@ player.sprite = 'images/char-princess-girl.png';
 let select = 0;
 let num =0;
 
+/*
+ * handle the keypress by logic. Move the character , change it , help, reset functions
+ */
 player.handleInput = function(movement) {
 
     if (movement === 'up' && this.y > 0) {
@@ -154,16 +153,16 @@ player.handleInput = function(movement) {
     else if (movement === 'enemy') {
         allEnemies.forEach(enemyz => {
             if (enemyz.sprite === 'images/enemy-bug.png') {
-                enemyz.sprite = 'images/enemy-frog.png'; 
+                enemyz.sprite = 'images/enemy-frog.png';
             }
             else if (enemyz.sprite === 'images/enemy-frog.png')  {
                 enemyz.sprite = 'images/enemy-bug.png'; 
             }
+
         });;
     }
 
     else if (movement === 'help') {
-        
         num += 1;
         if (num % 2 === 0 ){
             help.style.display = 'block';
@@ -174,8 +173,9 @@ player.handleInput = function(movement) {
 
     }
 
-
-    // move the frog next to the princess in the finish area
+    /* 
+     * move the frog next to the princess in the finish area
+     */
     if (this.y >= 0 && this.y < 3 && this.x > 0) {
         frog.y = 0;
         frog.x = this.x - 1;
@@ -199,14 +199,15 @@ player.handleInput = function(movement) {
         if (this.win ===2){
             allEnemies.push(enemyRb);
         }
-
         else if (this.win > 4) {
             modalWin.style.display = 'block';
             modalLost.style.display = 'none';
             modalOpen();
         }
-        
-        // little delay in place back the player to start position
+
+        /*
+         *  little delay in place  the player back to start position
+         */
         setTimeout( function() {
         player.x=2;
         player.y=5;
@@ -225,8 +226,8 @@ player.checkPosition = function() {
         myPara.textContent = 'Extra Life! ';
         messageDisplay();
         heart.remove();
-
     }
+
 };
 
 Player.prototype.update = function(dt) {
@@ -244,7 +245,7 @@ frog.change = function() {
     if (frog.left === true) {
         this.sprite = 'images/love-frog.png';
     }
-    else { 
+    else {
         this.sprite = 'images/love-frog-right.png';
     }
 };
@@ -255,7 +256,9 @@ heart.remove = function() {
     let removed = allEnemies.splice(0, 1);
 };
 
-// Random number generator , needed to place enemies to random position
+/*
+ * Random number generator , needed to place enemies to random position
+ */
 function rand(numero) {
 	return Math.floor(Math.random() * numero) + 1;
 }
@@ -284,8 +287,8 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down',
         72: 'help',
-        69: 'enemy',
         80: 'player',
+        69: 'enemy',
         82: 'reset'
     };
 
@@ -308,7 +311,6 @@ function allClose() {
     modalClose();
     close();
 }
-
 
 closeBtn.addEventListener('click', allClose);
 playBtn.addEventListener('click', function closeReset() {
