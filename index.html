@@ -6,6 +6,42 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <section id="modalHelp" class="modal-help-body">
+                <h3>NoiZe's Arcade Game Solution </h3>
+                <p>How to play</p>
+                <p> 1. Try to reach the water 5 times, lead the character with arrow keys.</p>
+                <p> 2. Try to collect the Heart for extra life.</p>
+                <p> 3. Avoid the enemies they grab your lives!</p>
+                <p> 4. Press E to change enemies.</p>
+                <p> 5. Press P to change player.</p>
+                <p> 6. Press R to reset the game.</p>
+                <p> 7. Press H to remove/display this help.</p>
+    </section>
+
+    <section id="modalMessage" class="modal-help-body">
+        <h3 id="h3Message"> ! </h3>
+
+    </section>
+
+    <section id="endModal" class="modal">
+        <div class="modal-content">
+            <section id="modalHeaderWon" class="modal-header">
+                <h2>Congratulation, You won!</h2>
+            </section>
+            <section id="modalHeaderLost" class="modal-header">
+                <h2>It was tough, hah? Try to win next time!</h2>
+            </section>
+            <section id="modalBody" class="modal-body">
+            <p>You did hard work!</p>
+            </section>
+
+            <footer class="modal-footer">
+                <h3>Want to play again?</h3>
+                <button id="playBtn" class="button">Click to play</button>
+                <button id="closeBtn" class="button">Click to close the windows</button>
+            </footer>
+        </div>
+    </section>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
